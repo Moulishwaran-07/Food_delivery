@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./Header"
-import './Header.css'
+// import './Header.css'
 import './Home.css'
 import banner from '../assets/image/banner2.jpg'
 import item1 from '../assets/foods/burger.avif'
@@ -17,10 +17,10 @@ import item11 from '../assets/foods/veg.avif'
 import item12 from '../assets/foods/pongal.avif'
 import item13 from '../assets/foods/poori.avif'
 import item14 from '../assets/foods/parotta.avif'
-import food from './menu.json'
-import food1 from './food1.json'
+import food0 from './burger.json'
+import food1 from './pizza.json'
 import star from '../assets/icon/star.png'
-import add from '../assets/icon/add.png'
+import off from '../assets/icon/off1.png'
 import Badge, { BadgeProps } from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
@@ -29,9 +29,12 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton1 from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from "react-router-dom";
 
 
 function Home() {
+    const Navigate2 = useNavigate()
+    const Search = () => { Navigate2("/Search") }
 
     const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -74,28 +77,31 @@ function Home() {
 
     const [Count, setCount] = useState(0)
 
-    const [Products, setProducts] = useState(food)
+    const [Products, setProducts] = useState(food0)
     const filterItems = (item: any) => {
 
-        const updateItem = Products.filter((e: any) => {
+        const updateItem = food0.filter((e: any) => {
             return e.category === item
 
         })
         setProducts(updateItem)
+    };
+   
+
+    const [Foods, setFoods] = useState(food1)
+    const filterItems1 = (item: any) => {
+
+        const updateItem = food1.filter((e: any) => {
+            return e.category === item;
+
+        })
+        setFoods(updateItem);
     }
 
     return (
         <div>
             <Header></Header>
-            <div className="cart_icon">
-                <div className="count_icon">
-                    <IconButton aria-label="cart">
-                        <StyledBadge badgeContent={Count} color="secondary">
-                            <LocalMallIcon color="warning" fontSize="medium" />
-                        </StyledBadge>
-                    </IconButton>
-                </div>
-            </div>
+           
             <div className="homepage">
                 <div className="banner">
                     <img src={banner}></img>
@@ -120,12 +126,12 @@ function Home() {
                         <div className="item4">
                             <img src={item4}></img>
                         </div>
-                        <div className="item5">
+                        {/* <div className="item5">
                             <img src={item5}></img>
                         </div>
                         <div className="item6">
                             <img src={item6}></img>
-                        </div>
+                        </div> */}
                         <div className="item7">
                             <img src={item7}></img>
                         </div>
@@ -153,30 +159,43 @@ function Home() {
                     </div>
                     <hr></hr>
                 </div>
-                <h1 className="tit2">Top dishes near you</h1>
-                <div className="all_foods">
+                <h1 className="tit2">Trending Offers :</h1>
+                <div className="all_foods1">
                     {Products.map((element: any) => {
                         const { image, title, description, category, price, id } = element
-                        return <div className="card" key={id}>
+                        return <div className="card1" key={id} onClick={Search}>
                             <img src={image}></img>
-                            <span className="category">{category}</span>
-                            <div className="add_icon">
-                                <img src={add} className="add" onClick={() => setCount(Count + 1)} onClickCapture={handleClick}></img>
-                                <Snackbar
-                                    open={open}
-                                    autoHideDuration={6000}
-                                    onClose={handleClose}
-                                    message="Your Item Added To Cart"
-                                    action={action}
-                                />
-                            </div>
-                            <div className="food_info">
-                                <div className="rating_star">
-                                    <p>{title}</p>
-                                    <img src={star} className="star"></img>
+                            <div className="offer">
+                                <img src={off} className="offer1"></img>
                                 </div>
-                                <p className="description">{description}</p>
-                                <p className="price">{price}</p>
+                            <span className="category1">{category}</span>
+                            <div className="food_info1">
+                                <div className="rating_star1">
+                                    <p>{title}</p>
+                                    <img src={star} className="star1"></img>
+                                </div>
+                                <p className="description1">{description}</p>
+                                {/* <p className="price">{price}</p>  */}
+                            </div>
+                        </div>
+                    })}
+                </div>
+                <div className="Food_part1">
+                    {Foods.map((element: any) => {
+                        const { image, title, description, category, price, id } = element
+                        return <div className="card2" key={id} onClick={Search}>
+                            <img src={image}></img>
+                            <div className="offer1">
+                                <img src={off} className="offer2"></img>
+                                </div>
+                            <span className="category2">{category}</span>
+                            <div className="food_info2">
+                                <div className="rating_star2">
+                                    <p>{title}</p>
+                                    <img src={star} className="star2"></img>
+                                </div>
+                                <p className="description2">{description}</p>
+                                {/* <p className="price1">{price}</p> */}
                             </div>
                         </div>
                     })}

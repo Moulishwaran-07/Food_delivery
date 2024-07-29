@@ -7,26 +7,29 @@
     font-family: RadioCanadaBigVariableFontwght;
     src: url(../assets/font/RadioCanadaBigVariableFontwght.ttf);
 }
-.cart_icon
-{
+
+/* .cart_icon {
     display: flex;
     justify-content: flex-end;
 }
-.cart_icon .count_icon
-{
+
+.cart_icon .count_icon {
     margin-right: 130px;
-    margin-top: -58px;
-}
+    margin-top: -42px;
+} */
+
 .banner {
     width: 100%;
     margin: auto;
     position: relative;
+    
 }
 
 .banner img {
     width: 100%;
     height: 500px;
     /* margin-left: 50px; */
+    margin-top: 20px;
 }
 
 .hide {
@@ -45,23 +48,23 @@
     position: absolute;
     margin-top: -465px;
     margin-left: 45px;
-    background-color: #142634;
+    background-color: #152636;
 }
 
 .dish .tit1 {
     margin-left: 50px;
     font-size: 1.7rem;
     font-family: ThyssenJItalic;
-    color: #dc2f02;
+    color: #c44900;
     cursor: pointer;
 }
 
 .dish .menu_para {
     margin-left: 50px;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: ThyssenJItalic;
-    color: #142634;
+    color: #a4161a;
 }
 
 .items {
@@ -217,7 +220,7 @@
 
 .dish hr {
     height: 3px;
-    background-color: gray;
+    background-color: #a5a5a5;
     border: none;
     margin-top: 40px;
 }
@@ -226,10 +229,10 @@
     margin-left: 50px;
     font-size: 1.7rem;
     font-family: ThyssenJItalic;
-    color: #dc2f02;
+    color: #c44900;
 }
 
-.all_foods {
+.all_foods1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-left: 50px;
@@ -237,83 +240,159 @@
     row-gap: 50px;
 }
 
-.card {
+.card1 {
     width: 280px;
-    height: 390px;
+    height: 350px;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #00000015;
-   cursor: pointer;
+    cursor: pointer;
 }
 
-.card img {
+.card1 img {
     height: 250px;
     width: 280px;
     border-radius: 15px 15px 0px 0px;
     transition: .0s;
 }
-.card img:hover
-{
+
+/* .card1 img:hover {
     transform: scale(1.02);
-}
-.card .category
-{
+} */
+
+.card1 .category1 {
     display: none;
 }
-.card .add_icon
-{
+
+.card1 .offer {
     display: flex;
     justify-content: flex-end;
 }
-.card .add
-{
-    width: 28px;
-    height: 28px;
+
+.card1 .offer1 {
+    width: 85px;
+    height: 85px;
     cursor: pointer;
     position: absolute;
-    margin-top: -40px;
-    margin-right: 10px;
-}
-.card .add:hover
-{
-    border-radius: 50%;
-    background-color:purple;
+   margin-right: -30px;
+   margin-top: -290px;
 }
 
-.food_info {
+.food_info1 {
     padding: 0px 10px 10px 10px;
 }
 
-.food_info .rating_star {
+.food_info1 .rating_star1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.food_info .rating_star .star {
+.food_info1 .rating_star1 .star1 {
     width: 90px;
     height: 20px;
 }
 
-.food_info .rating_star p {
+.food_info1 .rating_star1 p {
     font-size: 1rem;
     font-family: RadioCanadaBigVariableFontwght;
     font-weight: 600;
+    color: #f26419;
 }
 
-.food_info .description {
+.food_info1 .description1 {
     font-size: 0.8rem;
     font-family: RadioCanadaBigVariableFontwght;
     font-weight: 400;
     color: gray;
-   margin-top: -10px
+    margin-top: -10px
 }
-.food_info .price
-{
+
+
+
+.Food_part1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 50px;
+    margin-top: 40px;
+    row-gap: 50px;
+
+}
+
+.card2 {
+    width: 280px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    cursor: pointer;
+}
+
+.card2 img {
+    height: 250px;
+    width: 280px;
+    border-radius: 15px 15px 0px 0px;
+    transition: .0s;
+}
+
+/* .card2 img:hover {
+    transform: scale(1.02);
+} */
+
+.card2 .category2 {
+    display: none;
+}
+
+.card2 .offer1 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card2 .offer2 {
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+    position: absolute;
+   margin-right: -25px;
+   margin-top: -280px;
+}
+
+.food_info2 {
+    padding: 0px 10px 10px 10px;
+}
+
+.food_info2 .rating_star2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.food_info2 .rating_star2 .star2 {
+    width: 90px;
+    height: 20px;
+}
+
+.food_info2 .rating_star2 p {
     font-size: 1rem;
-   color:red;
-   font-weight: 700;
-   font-size: 0.9rem;
-   font-family: RadioCanadaBigVariableFontwght;
+    font-family: RadioCanadaBigVariableFontwght;
+    font-weight: 600;
+    color: #f26419;
+}
+
+.food_info2 .description2 {
+    font-size: 0.8rem;
+    font-family: RadioCanadaBigVariableFontwght;
+    font-weight: 400;
+    color: gray;
+    margin-top: -10px
+}
+
+.food_info2 .price2 {
+    font-size: 1rem;
+    color: red;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: RadioCanadaBigVariableFontwght;
 }
