@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
+import Header from "./Header"
 import './Search.css'
 import small1 from '../assets/search_icon/chinese1.jpg'
 import small2 from '../assets/search_icon/parotta1.jpg'
@@ -15,16 +15,23 @@ import small11 from '../assets/search_icon/icecream1.jpg'
 import small12 from '../assets/search_icon/khichdi1.jpg'
 import food from './foods.json'
 import add from '../assets/icon/add.png'
-import Snackbar from '@mui/material/Snackbar';
-import IconButton1 from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 import star from '../assets/icon/star.png'
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { styled } from '@mui/material/styles';
 import Badge, { BadgeProps } from '@mui/material/Badge';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
+
+
+
 function Search() {
+
+    const Navigate4 = useNavigate()
+    const Cart = () => { Navigate4('/Cart') }
+
     const [Count, setCount] = useState(0)
     const [Products, setProducts] = useState(food)
     const filterItems = (item: any) => {
@@ -40,7 +47,7 @@ function Search() {
     const [filteredProducts, setFilteredProducts] = useState(food);
 
     useEffect(() => {
-        // Filter products based on the search term
+
         setFilteredProducts(
             Products.filter((product: any) =>
                 product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -52,34 +59,21 @@ function Search() {
 
 
 
+
+
     const [open, setOpen] = React.useState(false);
 
     const handleClick = () => {
         setOpen(true);
     };
 
-    const handleClose = (_event: React.SyntheticEvent | Event, reason?: string) => {
+    const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
             return;
         }
 
         setOpen(false);
     };
-    const action = (
-        <React.Fragment>
-            <Button color="secondary" size="small" onClick={handleClose}>
-                OPEN
-            </Button>
-            <IconButton1
-                size="small"
-                aria-label="close"
-                color="inherit"
-                onClick={handleClose}
-            >
-                <CloseIcon fontSize="small" />
-            </IconButton1>
-        </React.Fragment>
-    );
 
     const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -87,16 +81,18 @@ function Search() {
             top: 0,
             border: `1px solid ${theme.palette.background.paper}`,
             padding: '1px 1px',
-
+           
         },
+        
     }));
+   
 
     return (
         <div>
             <Header></Header>
             <div className="cart_icon">
                 <div className="count_icon">
-                    <IconButton aria-label="cart">
+                    <IconButton aria-label="cart" onClick={Cart}>
                         <StyledBadge badgeContent={Count} color="secondary">
                             <LocalMallIcon color="secondary" fontSize="large" />
                         </StyledBadge>
@@ -119,7 +115,7 @@ function Search() {
                         <img src={small1} onClick={() => filterItems('chinese')} alt="chinese"></img>
                     </div>
                     <div className="small2">
-                        <img src={small2} onClick={() => filterItems('')} alt=""></img>
+                        <img src={small2} onClick={() => filterItems('parotta')} alt="parotta"></img>
                     </div>
                     <div className="small3">
                         <img src={small3} onClick={() => filterItems('')} alt=""></img>
@@ -134,7 +130,7 @@ function Search() {
                         <img src={small6} onClick={() => filterItems('')} alt=""></img>
                     </div>
                     <div className="small7">
-                        <img src={small7} onClick={() => filterItems('')} alt=""></img>
+                        <img src={small7} onClick={() => filterItems('pizza')} alt="pizza"></img>
                     </div>
                     <div className="small8">
                         <img src={small8} onClick={() => filterItems('')} alt=""></img>
@@ -155,6 +151,7 @@ function Search() {
                 <h1 className="full_food" onClick={() => setProducts(food)}>All Food</h1>
                 <hr className="search_line"></hr>
             </div>
+          
             <div>
                 <div className="all_foods">
                     {filteredProducts.length > 0 ? (
@@ -162,6 +159,7 @@ function Search() {
                             const { image, title, description, category, price, id } = element;
                             return (
                                 <div className="card" key={id}>
+                                   
                                     <img src={image} alt={title} />
                                     <span className="category">{category}</span>
                                     <div className="add_icon">
@@ -172,13 +170,17 @@ function Search() {
                                             onClickCapture={handleClick}
                                             alt="add"
                                         />
-                                        <Snackbar
-                                            open={open}
-                                            autoHideDuration={6000}
-                                            onClose={handleClose}
-                                            message="Your Item Added To Cart"
-                                            action={action}
-                                        />
+                                        <Snackbar open={open} autoHideDuration={7000} onClose={handleClose}>
+                                            <Alert
+                                                onClose={handleClose}
+                                                severity="success"
+                                                variant="filled"
+                                                sx={{ width: '100%' }}
+                                            >
+                                                Your Item Added To Cart<span className="view_pop" onClick={Cart}>Open</span>
+                                            </Alert>
+                                        </Snackbar>
+
                                     </div>
                                     <div className="food_info">
                                         <div className="rating_star">
@@ -196,6 +198,7 @@ function Search() {
                     )}
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     )
 }

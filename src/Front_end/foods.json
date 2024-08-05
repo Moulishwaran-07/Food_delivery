@@ -222,5 +222,37 @@
         "category": "roll",
         "image": "https://www.foodandwine.com/thmb/KHyTc4nMWzgm_gCnTU7phK9ViDk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/201103-xl-sushi-rolls-cc8c919a05d040ada4ee715039e18d66.jpg",
         "price": "210₹"
+    },
+    {
+        "id": 29,
+        "title": " Kothu Parotta",
+        "description": "Food provides essential nutrients for overall health and well-being",
+        "category": "parotta",
+        "image": "https://www.licious.in/blog/wp-content/uploads/2022/12/Shutterstock_1432403939.jpg",
+        "price": "120₹"
+    },
+    {
+        "id": 30,
+        "title": "Curry Parotta",
+        "description": "Food provides essential nutrients for overall health and well-being",
+        "category": "parotta",
+        "image": "https://images.slurrp.com/webstories/wp-content/uploads/2023/03/4.-Malabar-Parotta-with-Kerala-beef-curry.jpg",
+        "price": "150₹"
+    },
+    {
+        "id": 31,
+        "title": "Egg Parotta",
+        "description": "Food provides essential nutrients for overall health and well-being",
+        "category": "parotta",
+        "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/06/kothu-parotta-paratha.jpg",
+        "price": "130₹"
+    },
+    {
+        "id": 32,
+        "title": "Chili Parotta",
+        "description": "Food provides essential nutrients for overall health and well-being",
+        "category": "parotta",
+        "image": "https://www.cookshideout.com/wp-content/uploads/2014/01/Chili-Parotta-FI.jpg",
+        "price": "140₹"
     }
 ]

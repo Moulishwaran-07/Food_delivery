@@ -13,6 +13,9 @@ function Header() {
     const Navigate1 = useNavigate()
     const Search = () => { Navigate1("/Search") }
 
+    const Navigate3 = useNavigate()
+    const About =()=>{Navigate3("/About")}
+
     return (
         <div>
 
@@ -24,7 +27,7 @@ function Header() {
                     <div className="nav2">
                         <button className="n1" onClick={Home}>Home</button>
                         <button className="n2" onClick={Search}>Search</button>
-                        <button className="n3">About</button>
+                        <button className="n3" onClick={About}>About</button>
                     </div>
                     <div className="nav3">
                         <button className="n4">Sign in</button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./Header"
-// import './Header.css'
+import Footer from "./Footer";
 import './Home.css'
 import banner from '../assets/image/banner2.jpg'
 import item1 from '../assets/foods/burger.avif'
@@ -34,7 +34,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
     const Navigate2 = useNavigate()
-    const Search = () => { Navigate2("/Search") }
+    const search = () => { Navigate2("/Search") }
 
     const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -163,7 +163,7 @@ function Home() {
                 <div className="all_foods1">
                     {Products.map((element: any) => {
                         const { image, title, description, category, price, id } = element
-                        return <div className="card1" key={id} onClick={Search}>
+                        return <div className="card1" key={id} onClick={search}>
                             <img src={image}></img>
                             <div className="offer">
                                 <img src={off} className="offer1"></img>
@@ -183,7 +183,7 @@ function Home() {
                 <div className="Food_part1">
                     {Foods.map((element: any) => {
                         const { image, title, description, category, price, id } = element
-                        return <div className="card2" key={id} onClick={Search}>
+                        return <div className="card2" key={id} onClick={search}>
                             <img src={image}></img>
                             <div className="offer1">
                                 <img src={off} className="offer2"></img>
@@ -202,6 +202,7 @@ function Home() {
                 </div>
 
             </div>
+            <Footer></Footer>
         </div>
     )
 }

@@ -2,6 +2,7 @@
     font-family: RadioCanadaBigVariableFontwght;
     src: url(../assets/font/RadioCanadaBigVariableFontwght.ttf);
 }
+
 .cart_icon {
     display: flex;
     justify-content: flex-end;
@@ -11,6 +12,7 @@
     margin-right: 200px;
     margin-top: 80px;
 }
+
 .Search_part {
     margin-top: -46px;
 }
@@ -51,9 +53,11 @@ input[type="text"]:focus {
     width: 70%;
     cursor: pointer;
 }
+
 .small_items::-webkit-scrollbar {
     display: none;
 }
+
 .small1 img {
     height: 80px;
     width: 80px;
@@ -88,37 +92,44 @@ input[type="text"]:focus {
     width: 80px;
     margin-left: 30px;
 }
+
 .small7 img {
     height: 80px;
-    width: 80px;  
+    width: 80px;
     margin-left: 30px;
 }
+
 .small8 img {
     height: 80px;
-    width: 80px; 
-    margin-left: 30px; 
-}
-.small9 img {
-    height: 80px;
-    width: 80px;  
+    width: 80px;
     margin-left: 30px;
 }
+
+.small9 img {
+    height: 80px;
+    width: 80px;
+    margin-left: 30px;
+}
+
 .small10 img {
     height: 80px;
-    width: 80px; 
-    margin-left: 30px; 
+    width: 80px;
+    margin-left: 30px;
 }
+
 .small11 img {
     height: 80px;
-    width: 80px; 
-    margin-left: 30px; 
+    width: 80px;
+    margin-left: 30px;
 }
+
 .small12 img {
     height: 80px;
-    width: 80px; 
-    margin-left: 30px; 
+    width: 80px;
+    margin-left: 30px;
 }
-.Search_part .full_food{
+
+.Search_part .full_food {
     font-size: 1.1rem;
     font-family: RadioCanadaBigVariableFontwght;
     font-weight: 700;
@@ -130,10 +141,11 @@ input[type="text"]:focus {
     padding-left: 13px;
     cursor: pointer;
 }
-.Search_part .full_food:hover
-{
+
+.Search_part .full_food:hover {
     color: #f48c06;
 }
+
 .Search_part .search_line {
     height: 2px;
     border: none;
@@ -141,6 +153,7 @@ input[type="text"]:focus {
     margin-top: 20px;
     width: 90%;
 }
+
 .all_foods {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -185,12 +198,23 @@ input[type="text"]:focus {
     position: absolute;
     margin-top: -40px;
     margin-right: 10px;
-  
+
 }
 
 .card .add:hover {
     border-radius: 50%;
     background-color: #bb3e03;
+}
+
+.add_icon .view_pop {
+    margin-left: 10px;
+    color: #aacc00;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.add_icon .view_pop:hover
+{
+    color: #eeef20;
 }
 
 .food_info {
@@ -231,8 +255,8 @@ input[type="text"]:focus {
     font-size: 0.9rem;
     font-family: RadioCanadaBigVariableFontwght;
 }
-.all_foods .no_food
-{
+
+.all_foods .no_food {
     font-size: 1.8rem;
     font-family: RadioCanadaBigVariableFontwght;
     font-weight: 500;
@@ -244,4 +268,51 @@ input[type="text"]:focus {
     width: 300px;
     margin-left: 550px;
     margin-top: 70px;
+}
+
+
+
+
+
+
+
+
+@media all and (max-width:480px) {
+    .cart_icon {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .cart_icon .count_icon {
+        margin-right: 10px;
+        margin-top: 100px;
+    }
+    .Search_part {
+        margin-top: -47px;
+        margin-left: -40px;
+    }
+    input[type="text"] 
+    {
+        width: 250px;
+        background-position: 230px;
+    }
+    .small_items
+    {
+        margin-left: 60px;
+        width: 340px;
+    }
+    .Search_part .full_food
+    {
+        margin-top: 50px;
+        margin-left: 70px;
+    }
+    .all_foods {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 45px;
+        margin-top: 40px;
+        row-gap: 50px;
+    }
+    
+   
 }
